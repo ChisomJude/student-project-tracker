@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ```
 
 ### 3.Db Conenctions
-- navigate to app/main and update vault ip :
+- At this stage you need to export your vault credentials given :
 
 ```export VAULT_ADDR=
    export VAULT_TOKEN=
@@ -47,17 +47,21 @@ Visit `http://vmip:8000` to see your app in action.
 ## 🐳 Docker Instructions
 
 ### 1. Build Docker Image
+write a dockerfile to build the app, your dockerfile should sit at the root directory of this project - ie student-project-tracker
+
 ```bash
 docker build -t student-tracker .
 ```
 
 ### 2. Run Docker Container
+- At this stage you need to export your vault credentials before you run the app to ensure the app can access vault, the run the command below to run the app
+
 ```bash
 docker run --env-file .env -p 8000:8000 student-tracker
 ```
 
 ### 3. Push to Docker Hub
-Ensure you're logged in:
+Ensure you're logged in, create a account with dockerhub if you dont have one.
 ```bash
 docker login
 ```
