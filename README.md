@@ -58,6 +58,10 @@ docker build -t student-tracker .
 
 ```bash
 docker run --env-file .env -p 8000:8000 student-tracker
+or 
+
+docker run -d -p 8000:8000 -e VAULT_ADDR -e VAULT_ROLE_ID  -e VAULT_SECRET_ID <dockerubusername>/student-tracker:latest
+
 ```
 
 ### 3. Push to Docker Hub
